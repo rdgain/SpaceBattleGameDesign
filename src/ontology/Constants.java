@@ -9,8 +9,8 @@ package ontology;
  * https://google.github.io/styleguide/javaguide.html
  */
 public class Constants {
-  public static double SHIP_MAX_SPEED = 2; // to optimise, id=2
-  public static double THRUST_SPEED = 2; // to optimise, id=3
+  public static double SHIP_MAX_SPEED = 20; // to optimise, id=2
+  public static double THRUST_SPEED = 15; // to optimise, id=3
   public static int MISSILE_COST = 1; // to optimise, id=4
   public static int MISSILE_MAX_SPEED = 5; // to optimise, id=7
   public static int MISSILE_COOLDOWN = 4; // to optimise, id=8
@@ -18,7 +18,10 @@ public class Constants {
 
   public static int KILL_AWARD = 100; // to optimise, id=11
 
-
+  public static int GRID_SIZE = 2; //max 4
+  public static String HOLE_GRID_MAYBE = "TFTFFFFFFFFFFFFFF";
+  public static int BLACKHOLE_RADIUS = 50;
+  public static double BLACKHOLE_FORCE = 2;
 
   public static final double SHIP_SCALE = 1;
   public static final double MAX_REPULSE_FORCE = 1.0;
@@ -32,7 +35,7 @@ public class Constants {
   public static final double GRAVITY = 0;
   public static  double FRICTION = 0.99; // to optimise, id=9
 
-  public static  double RADIAN_UNIT = 10 * Math.PI / 180; // to optimise, id=10
+  public static  double RADIAN_UNIT = 4; // to optimise, id=10
 
   public static final int WIDTH = 640;
   public static final int HEIGHT = 480;

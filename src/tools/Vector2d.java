@@ -324,4 +324,12 @@ public class Vector2d {
     else return new Vector2d(1,0);
   }
 
+  public Vector2d getNormalDirectionBetween(Vector2d other) {
+    Vector2d direction = new Vector2d();
+    direction.x = other.x - x;
+    direction.y = other.y - y;
+    direction.normalise();
+    // System.out.println(direction);
+    return direction;
+  }
 }

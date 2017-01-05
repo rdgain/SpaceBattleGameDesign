@@ -133,6 +133,16 @@ public class Ship extends GameObject {
 
     GravityPhysics.gravity(pos, velocity);
 
+    for (BlackHole[] bha : StateObservationMulti.blackHoles) {
+      for (BlackHole bh : bha) {
+        if (bh != null) {
+          if (this.pos.dist(bh.pos) < bh.radius) {
+            GravityPhysics.blackHoleForce(pos, velocity, bh);
+          }
+        }
+      }
+    }
+
     velocity.x = Utils.clamp(-Constants.SHIP_MAX_SPEED, velocity.x,
         Constants.SHIP_MAX_SPEED);
     velocity.y = Utils.clamp(-Constants.SHIP_MAX_SPEED, velocity.y,

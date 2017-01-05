@@ -22,6 +22,6 @@ public class ForcePhysics {
   }
 
   public static void thrust(Vector2d velocity, Vector2d dir) {
-    velocity.add(Constants.THRUST_SPEED*dir.x, Constants.THRUST_SPEED*dir.y);
+    velocity.add(Constants.THRUST_SPEED*dir.x / 100, Constants.THRUST_SPEED*dir.y / 100);
   }
 }

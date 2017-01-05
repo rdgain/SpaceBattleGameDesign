@@ -23,7 +23,7 @@ public class RotationPhysics {
   }
 
   public static void steer(Vector2d dir, double angle) {
-    dir.rotate(angle* Constants.RADIAN_UNIT);
+    dir.rotate(angle * Constants.RADIAN_UNIT * Math.PI / 180);
   }
 
 }

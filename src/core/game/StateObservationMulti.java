@@ -3,13 +3,10 @@ package core.game;
 import competition.CompetitionParameters;
 import core.player.AbstractMultiPlayer;
 import core.termination.Termination;
+import static ontology.Constants.*;
 import ontology.Constants;
 import ontology.Types;
-import ontology.asteroids.Ship;
-import ontology.asteroids.GameObject;
-import ontology.asteroids.View;
-
-import ontology.asteroids.Missile;
+import ontology.asteroids.*;
 
 import tools.ElapsedCpuTimer;
 import tools.JEasyFrame;
@@ -51,6 +48,12 @@ public class StateObservationMulti {
    * Other objects, except avatars
    */
   protected ArrayList<GameObject> objects;
+
+  /**
+   * Black holes
+   */
+  public static BlackHole[][] blackHoles;
+
   /**
    * Limit number of each resource type
    */
@@ -106,6 +109,7 @@ public class StateObservationMulti {
   public void reset() {
     setParams();
     createAvatars();
+    createBlackHoles();
     resetLastAction();
   }
 
@@ -122,6 +126,21 @@ public class StateObservationMulti {
     this.avatarLastAction = new Types.ACTIONS[this.no_players];
     for (int i = 0; i < no_players; i++) {
       avatarLastAction[i] = Types.ACTIONS.ACTION_NIL;
+    }
+  }
+
+  public void createBlackHoles() {
+    blackHoles = new BlackHole[GRID_SIZE][GRID_SIZE];
+    for (int i = 0; i < GRID_SIZE; i++) {
+      for (int j = 0; j < GRID_SIZE; j++) {
+        if (HOLE_GRID_MAYBE.charAt(i*GRID_SIZE + j) == 'T') {
+            int cellx = WIDTH / GRID_SIZE;
+            int celly = HEIGHT / GRID_SIZE;
+            int x = cellx * (j+1) - cellx/2;
+            int y = celly * (i+1) - celly/2;
+            blackHoles[i][j] = new BlackHole(new Vector2d(x,y),BLACKHOLE_RADIUS,BLACKHOLE_FORCE);
+        }
+      }
     }
   }
 
@@ -166,8 +185,8 @@ public class StateObservationMulti {
    */
   public void createAvatars() {
     avatars = new Ship[no_players];
-    double unit_x = Constants.WIDTH / (no_players + 1);
-    double unit_y = Constants.HEIGHT / (no_players + 1);
+    double unit_x = WIDTH / (no_players + 1);
+    double unit_y = HEIGHT / (no_players + 1);
     for (int i=0; i<no_players; i++) {
       Vector2d pos = new Vector2d(unit_x * (i + 1), unit_y * (i + 1));
       Vector2d dir = new Vector2d(0, (i%2)==0? 1 : -1);
@@ -552,6 +571,13 @@ public class StateObservationMulti {
         RenderingHints.VALUE_ANTIALIAS_ON);
     g.setColor(Types.BLACK);
     g.fillRect(0, 0, Constants.WIDTH, Constants.HEIGHT);
+
+
+      for (BlackHole[] bha : blackHoles)
+          for (BlackHole bh : bha) {
+              if (bh != null) bh.draw(g);
+
+      }
 
     if(!objects.isEmpty()) {
       GameObject[] objectsCopy = objects.toArray(new GameObject[objects.size()]);
