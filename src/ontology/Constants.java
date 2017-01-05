@@ -20,8 +20,28 @@ public class Constants {
 
   public static int GRID_SIZE = 2; //max 4
   public static String HOLE_GRID_MAYBE = "TFTFFFFFFFFFFFFFF";
+//    public static String HOLE_GRID_MAYBE = "TTTTTTTTTTTTTTTTTTT";
   public static int BLACKHOLE_RADIUS = 50;
   public static double BLACKHOLE_FORCE = 2;
+
+
+    public static final int DEFAULT = 0;
+    public static final int TWIN = 1;
+    public static final int BOMB = 2;
+
+    public static int BOMB_TTL = 2;
+    public static int BOMB_RADIUS = 20;
+    public static int MISSILE_TYPE = BOMB;
+
+    public static int RESOURCE_TTL = 500;
+    public static int RESOURCE_COOLDOWN = 250;
+    public static          int RESOURCE_PACK = 20;
+
+public static      int STAR_OUTSIDE_RADIUS = 10;
+public static      int STAR_INSIDE_RADIUS = 3;
+public static      int STAR_EDGES = 5;
+
+
 
   public static final double SHIP_SCALE = 1;
   public static final double MAX_REPULSE_FORCE = 1.0;

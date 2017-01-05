@@ -4,6 +4,8 @@ import ontology.Constants;
 import tools.Utils;
 import ontology.Types;
 
+import static ontology.Constants.RESOURCE_PACK;
+
 /**
  * Created by Mike and Raluca on 20/05/2016.
  * CSEE, University of Essex, UK
@@ -21,7 +23,7 @@ public class WeaponSystem {
   private int resource;
   private int cooldown;
 
-  WeaponSystem(int weaponId) {
+  public WeaponSystem(int weaponId) {
     this.weaponId = weaponId;
     this.cooldown = 0;
     this.resource = Constants.MISSILE_MAX_RESOURCE;
@@ -74,6 +76,8 @@ public class WeaponSystem {
   public int getResource() {
     return resource;
   }
+
+  public void addResource(){resource += RESOURCE_PACK;}
 
   public int getCooldown() {
     return Constants.MISSILE_COOLDOWN;

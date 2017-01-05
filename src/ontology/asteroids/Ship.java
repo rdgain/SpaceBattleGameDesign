@@ -79,41 +79,10 @@ public class Ship extends GameObject {
     this.resources = new TreeMap<>();
 //    this.resources.put(Constants.WEAPON_ID_MISSILE,Constants.MISSILE_MAX_RESOURCE);
     this.weaponSystems = new ArrayList<>();
-    this.weaponSystems.add(new WeaponSystem(Constants.WEAPON_ID_MISSILE));
   }
 
   public void update(Types.ACTIONS action) {
     this.thrusting = false;
-//    switch (action) {
-//      case ACTION_THRUST_FIRE:
-//      case ACTION_THRUST:
-//        this.thrusting = true;
-//        ForcePhysics.thrust(velocity, dir);
-//        break;
-//      case ACTION_LEFT:
-//        RotationPhysics.steer(dir, -1.0);
-//        break;
-//      case ACTION_RIGHT:
-//        RotationPhysics.steer(dir, 1.0);
-//        break;
-//      case ACTION_FIRE:
-////        ForcePhysics.repulse(pos, dir, false);
-//        break;
-//      case ACTION_NIL:
-//        break;
-//      case ACTION_THRUST_RIGHT:
-//        this.thrusting = true;
-//        ForcePhysics.thrust(velocity, dir);
-//        RotationPhysics.steer(dir, 1.0);
-//        break;
-//      case ACTION_THRUST_LEFT:
-//        this.thrusting = true;
-//        ForcePhysics.thrust(velocity, dir);
-//        RotationPhysics.steer(dir, -1.0);
-//        break;
-//      default:
-//        break;
-//    }
 
     if(action.toString().contains("THRUST"))
     {

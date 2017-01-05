@@ -83,6 +83,8 @@ public class StateObservationMulti {
 
   public View view;
 
+    public Resource resource;
+
   double scoreRecord[][];
   /**
    * Avatars last actions.
@@ -191,6 +193,8 @@ public class StateObservationMulti {
       Vector2d pos = new Vector2d(unit_x * (i + 1), unit_y * (i + 1));
       Vector2d dir = new Vector2d(0, (i%2)==0? 1 : -1);
       this.avatars[i] = new Ship(pos, dir, i);
+        this.avatars[i].weaponSystems.add(new WeaponSystem(WEAPON_ID_MISSILE));
+//        System.out.println(i + " " + avatars[i].weaponSystems.get(0).getResource());
 //      System.out.println("ship id=" + i + " x="+ unit_x * (i + 1) + " y=" + unit_y * (i + 1));
 //      System.out.println("Ship id " + this.avatars[i].getPlayerId() + " is created at ("
 //          + this.avatars[i].getPosition().x + "," + this.avatars[i].getPosition().y + ")");
@@ -315,6 +319,13 @@ public class StateObservationMulti {
     ElapsedCpuTimer elapsedTimer = new ElapsedCpuTimer();
     elapsedTimer.setMaxTimeMillis(CompetitionParameters.ACTION_TIME);
 
+      if(getGameTick()%(RESOURCE_COOLDOWN + RESOURCE_TTL)==10)
+      {
+          //spawn a new resource on the map
+            resource = new Resource(new Vector2d(new Random().nextInt(WIDTH),new Random().nextInt(HEIGHT)));
+      }
+      if (resource != null) resource.update();
+
     Types.ACTIONS[] actions = new Types.ACTIONS[no_players];
     for (int i=0; i<no_players; i++) {
       actions[i] = this.avatars[i].player.act(this.copy(), elapsedTimer);
@@ -376,11 +387,23 @@ public class StateObservationMulti {
   }
 
   protected void removeDead() {
+
+      ArrayList<GameObject> addnew = new ArrayList<>();
+
     for(int i=objects.size()-1; i>=0; i--) {
       GameObject ob = objects.get(i);
-      if(ob.isDead())
-        objects.remove(i);
+      if(ob.isDead()) {
+          if (MISSILE_TYPE == BOMB && !(objects.get(i) instanceof MissileBomb)) {
+              // Spawn bomb
+              addnew.add(new MissileBomb(objects.get(i).getPlayerId(),objects.get(i).getPosition()));
+          }
+          objects.remove(i);
+      }
     }
+
+    if (resource != null && resource.isDead()) resource = null;
+
+    objects.addAll(addnew);
   }
 
   protected void checkCollision() {
@@ -419,24 +442,51 @@ public class StateObservationMulti {
   protected void checkAvatarObjectCollision() {
     int[] usedWeapon = new int[this.objects.size()];
     for (int i=0; i<no_players; i++) {
-      if (this.avatars[i].getWinState() != Types.WINNER.PLAYER_LOSES) {
+      if (this.avatars[i].getWinState() != Types.WINNER.PLAYER_LOSES)
+      {
         for (int j = 0; j < this.objects.size(); j++) {
           if (this.objects.get(j).getPlayerId() != i && overlap(avatars[i], this.objects.get(j))) {
+
             this.avatars[i].injured(objects.get(j).destructivePower);
             this.avatars[objects.get(j).getPlayerId()].kill();
             usedWeapon[j] = 1;
-//            System.out.println(" ship " + i + " hitted by missile launched by ship " + objects.get(j).getPlayerId());
+
+
+
+//            System.out.println(" ship " + i + " hit by missile launched by ship " + objects.get(j).getPlayerId());
 //            System.out.println(" ship " + i + " points " + this.avatars[i].getPoints());
 
           }
         }
       }
+
+      if(resource!=null) {
+          if (overlap(this.avatars[i], resource)) {
+              ArrayList<WeaponSystem> wps = this.avatars[i].weaponSystems;
+              for (WeaponSystem system : wps) {
+                  system.addResource();
+              }
+
+              resource = null;
+          }
+      }
+
     }
+
+
+
+    ArrayList<GameObject> addnew = new ArrayList<>();
+
     for (int i=usedWeapon.length-1; i>=0; i--) {
       if (usedWeapon[i] == 1) {
-        objects.remove(i);
+          if (MISSILE_TYPE == BOMB && !(objects.get(i) instanceof MissileBomb)) {
+              // Spawn bomb
+              addnew.add(new MissileBomb(objects.get(i).getPlayerId(),objects.get(i).getPosition()));
+          }
+          objects.remove(i);
       }
     }
+    objects.addAll(addnew);
     checkShips();
   }
 
@@ -466,6 +516,7 @@ public class StateObservationMulti {
 
   protected void checkObjectCollision() {
     int[] usedWeapon = new int[this.objects.size()];
+
     for (int i=0; i<this.objects.size(); i++) {
       for (int j = i + 1; j < this.objects.size(); j++) {
         if (this.objects.get(j).getPlayerId() != this.objects.get(j).getPlayerId()
@@ -578,6 +629,9 @@ public class StateObservationMulti {
               if (bh != null) bh.draw(g);
 
       }
+
+      if (resource != null)
+          resource.draw(g);
 
     if(!objects.isEmpty()) {
       GameObject[] objectsCopy = objects.toArray(new GameObject[objects.size()]);

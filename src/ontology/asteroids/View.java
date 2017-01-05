@@ -80,14 +80,16 @@ public class View extends JComponent {
     String strPoints = "Points:    " + game.getPlayerPoints(0) + " | " + game.getPlayerPoints(1);
     String strTicks = "Ticks:    " + game.getGameTick();
     String strLives = "Life: " + game.getAvatarLives(0) +  " | " + game.getAvatarLives(1);
+    String strMissiles = "Missiles: " + game.getAvatars()[0].weaponSystems.get(0).getResource() +  " | " + game.getAvatars()[1].weaponSystems.get(0).getResource();
     String p1 = "P1 BLUE";
     String p2 = "P2 GREEN";
     g.drawString(strPoints, 10, 20);
     g.drawString(strScores, 10, 40);
     g.drawString(strLives, 10, 80);
-    g.drawString(strTicks, 10, 110);
-    g.drawString(p1, 10, 140);
-    g.drawString(p2, 10, 170);
+    g.drawString(strMissiles, 10, 100);
+    g.drawString(strTicks, 10, 140);
+    g.drawString(p1, 10, 170);
+    g.drawString(p2, 10, 200);
   }
 
   public Dimension getPreferredSize() {

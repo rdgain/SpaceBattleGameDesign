@@ -146,13 +146,13 @@ public class GameTest {
     players[0] = createMultiPlayer("controllers." + p1 + ".Agent", game, rdm.nextInt(), 0, false);
     players[1] = createMultiPlayer("controllers." + p2 + ".Agent", game, rdm.nextInt(), 1, false);
 
-    if (id1==0) {
-      game.cheating = 0;
-    } else if (id2==0) {
-      game.cheating = 1;
-    } else {
-      game.cheating = -1;
-    }
+//    if (id1==0) {
+//      game.cheating = 0;
+//    } else if (id2==0) {
+//      game.cheating = 1;
+//    } else {
+//      game.cheating = -1;
+//    }
 
     game.playGame(players, rdm.nextInt());
 
