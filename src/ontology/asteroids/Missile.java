@@ -2,9 +2,13 @@ package ontology.asteroids;
 
 import ontology.Constants;
 import ontology.Types;
+import ontology.physics.GravityPhysics;
 import tools.Vector2d;
 
 import java.awt.Graphics2D;
+
+import core.game.StateObservationMulti;
+
 import java.awt.Color;
 
 /**
@@ -44,6 +48,18 @@ public class Missile extends Weapon {
       pos.add(velocity);
       ttl--;
     }
+    
+    for (BlackHole[] bha : StateObservationMulti.blackHoles) {
+        for (BlackHole bh : bha) {
+          if (bh != null) {
+            if (this.pos.dist(bh.pos) < bh.radius) {
+              GravityPhysics.blackHoleForce(pos, velocity, bh);
+            }
+          }
+        }
+      }
+    
+    
   }
 
   @Override

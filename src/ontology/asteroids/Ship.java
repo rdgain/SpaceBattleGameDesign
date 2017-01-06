@@ -34,6 +34,7 @@ public class Ship extends GameObject {
   private boolean thrusting;
   private int healthPoints;
   private int nbKills;
+  private int inBlackHoles;
   private double cost;
   private Types.WINNER winState;
 
@@ -75,6 +76,7 @@ public class Ship extends GameObject {
     this.color = Types.PLAYER_COLOR[playerId];
     this.cost = 0.0;
     this.nbKills = 0;
+    this.inBlackHoles = 0;
     this.destructivePower = Constants.MISSILE_DESTRUCTIVE_POWER;
     this.resources = new TreeMap<>();
 //    this.resources.put(Constants.WEAPON_ID_MISSILE,Constants.MISSILE_MAX_RESOURCE);
@@ -105,8 +107,17 @@ public class Ship extends GameObject {
     for (BlackHole[] bha : StateObservationMulti.blackHoles) {
       for (BlackHole bh : bha) {
         if (bh != null) {
-          if (this.pos.dist(bh.pos) < bh.radius) {
+        	
+        	double distance = this.pos.dist(bh.pos);
+        	
+          if (distance < bh.radius) {
             GravityPhysics.blackHoleForce(pos, velocity, bh);
+            
+            if(distance < bh.radius-Constants.SAFE_ZONE)
+            {
+            	inBlackHoles++;
+            }
+            
           }
         }
       }
@@ -268,7 +279,7 @@ public class Ship extends GameObject {
   }
 
   public double getPoints() {
-    return this.nbKills * Constants.KILL_AWARD + this.cost;
+    return this.nbKills * Constants.KILL_AWARD + this.cost - this.inBlackHoles * Constants.BLACKHOLE_PENALTY;
   }
 
   public double getCost() {

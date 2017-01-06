@@ -33,6 +33,8 @@ public class Weapon extends GameObject {
       pos.add(velocity);
       ttl--;
     }
+    
+    
   }
 
   @Override

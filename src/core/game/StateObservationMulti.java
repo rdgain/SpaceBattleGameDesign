@@ -545,12 +545,44 @@ public class StateObservationMulti {
     boolean fired = this.avatars[playerId].fireWeapon(weaponId);
 //    System.out.println("Ship " + playerId + " fires ? " + fired);
     if(fired) {
+    	
+    	if(MISSILE_TYPE == TWIN)
+    	{
+    		
+    		
+    		
+    		 Missile m = new Missile(playerId, this.avatars[playerId].getPosition(), new Vector2d(0, 0));
+    	     Vector2d playerDir = this.avatars[playerId].getDirection().copy();
+    	     Vector2d pos = this.avatars[playerId].getPosition().copy();
+    	     playerDir.rotate(-THETA*Math.PI/180);
+    		 m.setVelocityByDir(playerDir);
+    		 m.velocity.add(currentShip.velocity);
+    		 m.setPlayerId(playerId);
+    		
+    	//	 m.getPosition().add(currentShip.velocity, (currentShip.getRadius() + m.getRadius()) * 1.5 / m.velocity.mag());
+    	      
+    		 this.objects.add(m);
+    		 
+    		 Missile m2 = new Missile(playerId, this.avatars[playerId].getPosition(), new Vector2d(0, 0));
+    	    // Vector2d playerDir = this.avatars[playerId].getDirection().copy();
+    	     playerDir.rotate(2*THETA*Math.PI/180);
+    		 m2.setVelocityByDir(playerDir);
+    		 m2.velocity.add(currentShip.velocity);
+    		 m2.setPlayerId(playerId);
+    //		 m2.getPosition().add(currentShip.velocity, (currentShip.getRadius() + m.getRadius()) * 1.5 / m.velocity.mag());
+    	      
+    		 this.objects.add(m2);
+    	}
+    	
+    	else
+    	{
       Missile m = new Missile(playerId, this.avatars[playerId].getPosition(), new Vector2d(0, 0));
       m.setVelocityByDir(this.avatars[playerId].getDirection());
       m.velocity.add(currentShip.velocity);
       m.setPlayerId(playerId);
       m.getPosition().add(m.velocity, (currentShip.getRadius() + m.getRadius()) * 1.5 / m.velocity.mag());
       this.objects.add(m);
+    	}
       if(visible) {
 //        System.out.println("Ship " + playerId + " fires missile id " + m.getPlayerId());
       }

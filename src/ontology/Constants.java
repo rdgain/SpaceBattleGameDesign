@@ -23,6 +23,9 @@ public class Constants {
 //    public static String HOLE_GRID_MAYBE = "TTTTTTTTTTTTTTTTTTT";
   public static int BLACKHOLE_RADIUS = 50;
   public static double BLACKHOLE_FORCE = 2;
+  public static double BLACKHOLE_PENALTY = 0;
+  public static double SAFE_ZONE = 10;
+  
 
 
     public static final int DEFAULT = 0;
@@ -31,7 +34,9 @@ public class Constants {
 
     public static int BOMB_TTL = 2;
     public static int BOMB_RADIUS = 20;
-    public static int MISSILE_TYPE = BOMB;
+    public static int MISSILE_TYPE = TWIN;
+    
+    public static double THETA = 40;
 
     public static int RESOURCE_TTL = 500;
     public static int RESOURCE_COOLDOWN = 250;
