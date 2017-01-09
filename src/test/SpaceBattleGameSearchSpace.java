@@ -15,12 +15,36 @@ import java.util.Random;
 public class SpaceBattleGameSearchSpace implements SearchSpace {
 
   static int[][] values = {
-      { 4, 6, 8, 10}, // SHIP_MAX_SPEED
-      { 1, 2, 3, 4, 5},  // THRUST_SPEED
-      { 0, 1, 5, 10, 20, 50, 75, 100}, // MISSILE_COST
       { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, // MISSILE_MAX_SPEED
       { 1, 2, 3, 4, 5, 6, 7, 8, 9}, // MISSILE_COOLDOWN
-      { 10, 20, 30, 40, 50} // SHIP_RADIUS
+          {2, 4, 6, 8, 10}, //MISSILE_RADIUS
+          {40, 60, 80, 100, 120, 140, 160}, //MISSILE_MAX_TTL
+          {1, 2, 3, 4}, //GRID_SIZE
+          {0, 1},
+          {0, 1},
+          {0, 1},
+          {0, 1},
+          {0, 1},
+          {0, 1},
+          {0, 1},
+          {0, 1},
+          {0, 1},
+          {0, 1},
+          {0, 1},
+          {0, 1},
+          {0, 1},
+          {0, 1},
+          {0, 1},
+          {0, 1},
+          {25, 50, 75, 100, 150, 200}, //BLACKHOLE_RADIUS
+          {0, 1, 2, 3}, //BLACKHOLE_FORCE
+          {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, //BLACKHOLE_PENALTY
+          {0, 10, 20}, //SAFE_ZONE
+          {10, 20, 30, 40, 50}, //BOMB_RADIUS
+          {0, 1, 2}, // MISSILE_TYPE
+          {400, 500, 600}, //RESOURCE_TTL
+          {200,250,300}, //RESOURCE_COOLDOWN
+          {0, 1, 2, 3, 4, 5} //ENEMY_ID
   };
 
   @Override

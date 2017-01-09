@@ -32,6 +32,8 @@ public class Agent extends AbstractMultiPlayer {
   private double MUT = (1.0 / SIMULATION_DEPTH);
   private final int[] N_ACTIONS;
 
+  private static int MACRO_ACTIONS = 1;
+
   private ElapsedCpuTimer timer;
 
   private int genome[][][][];
@@ -155,7 +157,9 @@ public class Agent extends AbstractMultiPlayer {
         acts[i] = action_mapping[i].get(policy[depth]);
       }
 
-      stateObs.advance(acts);
+      for (int i = 0; i < MACRO_ACTIONS; i++) {
+        stateObs.advance(acts);
+      }
 
       if (stateObs.isGameOver()) {
         break;
@@ -192,7 +196,9 @@ public class Agent extends AbstractMultiPlayer {
           acts[oppID] = action2;
 
           StateObservationMulti stCopy = stateObs.copy();
-          stCopy.advance(acts);
+          for (int k = 0; k < MACRO_ACTIONS; k++) {
+            stCopy.advance(acts);
+          }
 
           double score = 0, scoreOpp = 0;
           try {

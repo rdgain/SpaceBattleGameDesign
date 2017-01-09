@@ -462,6 +462,9 @@ public class StateObservationMulti {
 
       if(resource!=null) {
           if (overlap(this.avatars[i], resource)) {
+
+            this.avatars[i].collected++;
+
               ArrayList<WeaponSystem> wps = this.avatars[i].weaponSystems;
               for (WeaponSystem system : wps) {
                   system.addResource();
@@ -611,7 +614,7 @@ public class StateObservationMulti {
     {
       while(!view.ready) {
         view.repaint();
-        waitStep(1000);
+        waitStep(5000);
       }
     }
 

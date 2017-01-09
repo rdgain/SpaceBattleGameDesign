@@ -103,7 +103,11 @@ public class GameTest {
     Constants.MISSILE_COOLDOWN = params[4];
     Constants.SHIP_RADIUS = params[5];
 
-    playOne(5, 0, true, 0);
+
+    int[] ar = new int[]{6, 8, 2, 60, 4, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 150, 1, 4, 20, 10, 1, 600, 200, 3};
+    GameDesign.playNWithParams(8, ar, 1);
+
+//    playOne(5, 0, true, 0);
 
 //    for(int j=0; j<1; j++) {
 //      int wins = 0;
@@ -141,8 +145,8 @@ public class GameTest {
     Random rdm = new Random();
     StateObservationMulti game = new StateObservationMulti(visuals);
     AbstractMultiPlayer[] players = new AbstractMultiPlayer[2];
-    String p1 = testedControllers[8];
-    String p2 = testedControllers[9];
+    String p1 = testedControllers[id1];
+    String p2 = testedControllers[id2];
     players[0] = createMultiPlayer("controllers." + p1 + ".Agent", game, rdm.nextInt(), 0, false);
     players[1] = createMultiPlayer("controllers." + p2 + ".Agent", game, rdm.nextInt(), 1, false);
 
@@ -153,6 +157,7 @@ public class GameTest {
 //    } else {
 //      game.cheating = -1;
 //    }
+
 
     game.playGame(players, rdm.nextInt());
 
@@ -217,13 +222,13 @@ public class GameTest {
       String p2 = testedControllers[id2];
       players[0] = createMultiPlayer("controllers." + p1 + ".Agent", game, rdm.nextInt(), 0, false);
       players[1] = createMultiPlayer("controllers." + p2 + ".Agent", game, rdm.nextInt(), 1, false);
-      if (id1==0) {
-        game.cheating = 0;
-      } else if (id2==0) {
-        game.cheating = 1;
-      } else {
-        game.cheating = -1;
-      }
+//      if (id1==0) {
+//        game.cheating = 0;
+//      } else if (id2==0) {
+//        game.cheating = 1;
+//      } else {
+//        game.cheating = -1;
+//      }
       game.playGame(players, rdm.nextInt());
       double state0;
       double state1;

@@ -1,6 +1,7 @@
 package test;
 
 import ontology.Constants;
+import static ontology.Constants.*;
 
 /**
  * Created by Jialin Liu on 12/10/2016.
@@ -140,20 +141,55 @@ public class GameDesign {
       { 4, 5, 1, 6, 4, 50}
   };
 
-  public static double[] playNWithParams(int ai1, int ai2, int[] params, int resample) {
+  public static double[] playNWithParams(int ai1, int[] params, int resample) {
 //    ElapsedCpuTimer t = new ElapsedCpuTimer();
 
-    Constants.SHIP_MAX_SPEED = params[0];
-    Constants.THRUST_SPEED = params[1];
-    Constants.MISSILE_COST = params[2];
-    Constants.MISSILE_MAX_SPEED = params[3];
-    Constants.MISSILE_COOLDOWN = params[4];
-    Constants.SHIP_RADIUS = params[5];
+    MISSILE_MAX_SPEED = params[0];
+    MISSILE_COOLDOWN = params[1];
+    MISSILE_RADIUS = params[2];
+    MISSILE_MAX_TTL = params[3];
+    GRID_SIZE = params[4];
 
-    double[] res = GameTest.playNAndMean(resample, ai1, ai2);
+    grid1 = params[5];
+    grid2 = params[6];
+    grid3 = params[7];
+    grid4 = params[8];
+    grid5 = params[9];
+    grid6 = params[10];
+    grid7 = params[11];
+    grid8 = params[12];
+    grid9 = params[13];
+    grid10 = params[14];
+    grid11 = params[15];
+    grid12 = params[16];
+    grid13 = params[17];
+    grid14 = params[18];
+    grid15 = params[19];
+    grid16 = params[20];
+
+    HOLE_GRID_MAYBE = (grid1 == 0? "F" : "T") + (grid2 == 0? "F" : "T") + (grid3 == 0? "F" : "T") + (grid4 == 0? "F" : "T")
+            + (grid5 == 0? "F" : "T") + (grid6 == 0? "F" : "T") + (grid7 == 0? "F" : "T") + (grid8 == 0? "F" : "T") + (grid9 == 0? "F" : "T") +
+            (grid10 == 0? "F" : "T") + (grid11 == 0? "F" : "T") + (grid12 == 0? "F" : "T") + (grid13 == 0? "F" : "T") + (grid14 == 0? "F" : "T") + (grid15 == 0? "F" : "T") + (grid16 == 0? "F" : "T");
+
+    BLACKHOLE_RADIUS = params[21];
+    BLACKHOLE_FORCE = params[22];
+    BLACKHOLE_PENALTY = params[23];
+    SAFE_ZONE = params[24];
+
+    BOMB_RADIUS = params[25];
+    MISSILE_TYPE = params[26];
+
+    RESOURCE_TTL = params[27];
+    RESOURCE_COOLDOWN = params[28];
+
+    ENEMY_ID = params[29];
+
+
+    int res1 = GameTest.playOne(ai1,ENEMY_ID,true,1);
+//    double[] res = GameTest.playNAndMean(resample, ai1, ENEMY_ID);
 //    System.out.println(t);
 
-    return res;
+    return null;
   }
 
 

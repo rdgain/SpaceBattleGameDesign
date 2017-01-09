@@ -42,7 +42,7 @@ public class MBanditEATest {
     }
 
 
-    double[] res = GameDesign.playNWithParams(ai1, ai2, params, resample);
+    double[] res = GameDesign.playNWithParams(ai1, params, resample);
     double bestSoFar = res[0];
     double bestSoFarFit = GameDesign.fitness(bestSoFar);
     double bestSoFarPoints = res[1];
@@ -73,13 +73,13 @@ public class MBanditEATest {
       mutatedParams[mutatedIdx] = mutatedValue;
 
       /** evaluate offspring */
-      res = GameDesign.playNWithParams(ai1, ai2, mutatedParams, resample);
+      res = GameDesign.playNWithParams(ai1, mutatedParams, resample);
       newWinRate = res[0];
       newPoints = res[1];
       newFitness = GameDesign.fitness(newWinRate);
 
       /** evaluate parent */
-      res = GameDesign.playNWithParams(ai1, ai2, params, resample);
+      res = GameDesign.playNWithParams(ai1, params, resample);
       bestSoFarPoints = (res[1] + bestSoFarPoints * buffer) / (buffer + 1);
       bestSoFar = (res[0] + bestSoFar * buffer) / (buffer + 1);
       bestSoFarFit = GameDesign.fitness(bestSoFar);
