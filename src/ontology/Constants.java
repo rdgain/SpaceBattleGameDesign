@@ -71,6 +71,7 @@ public class Constants {
     public static final int MISSILE_MAX_RESOURCE = 100;
     public static int RESOURCE_PACK = 20;
 
+    public static int MAX_GRID_SIZE = 4;
 
     public static double SHIP_MAX_SPEED = 20; // to optimise, id=2
     public static double THRUST_SPEED = 15; // to optimise, id=3

@@ -5,6 +5,8 @@ import tools.Utils;
 
 import java.util.Random;
 
+import static ontology.Constants.*;
+
 /**
  * Created by Jialin Liu on 13/10/2016.
  * CSEE, University of Essex, UK
@@ -68,7 +70,26 @@ public class RMHCTest {
       int[] mutatedParams = new int[params.length];
       System.arraycopy(params, 0, mutatedParams, 0, params.length);
       int mutatedIdx = rdm.nextInt(params.length);
+
+      int gridSizeIdx = 4; // index of grid size in evolvable param list (GameDesign class)
+      int numCells = params[gridSizeIdx]*params[gridSizeIdx];
+      int maxCells = MAX_GRID_SIZE*MAX_GRID_SIZE;
+      int extraCells = maxCells - numCells;
+
+      if (mutatedIdx != gridSizeIdx && params[gridSizeIdx] < MAX_GRID_SIZE) { //gridsize not chosen, reduce search space by ignoring the extra grid cells
+        int[] paramList = new int[params.length - extraCells];
+        int k = 0;
+        for (int i = 0; i < params.length; i++) {
+          if (i < gridSizeIdx + numCells + 1 || i > gridSizeIdx + maxCells) {
+            paramList[k] = i;
+            k++;
+          }
+        }
+        mutatedIdx = paramList[rdm.nextInt(paramList.length)];
+      }
+
       int mutatedValue = searchSpace.getRandomValue(mutatedIdx);
+
       mutatedParams[mutatedIdx] = mutatedValue;
       /** evaluate offspring */
       System.out.println("-------------------------");
