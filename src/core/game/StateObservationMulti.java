@@ -614,7 +614,7 @@ public class StateObservationMulti {
     {
       while(!view.ready) {
         view.repaint();
-        waitStep(5000);
+        waitStep(1000);
       }
     }
 

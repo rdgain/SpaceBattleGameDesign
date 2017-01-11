@@ -144,6 +144,33 @@ public class GameDesign {
   public static double[] playNWithParams(int ai1, int[] params, int resample) {
 //    ElapsedCpuTimer t = new ElapsedCpuTimer();
 
+    setParams(params);
+
+
+    double[] res = GameTest.playNAndMean(resample, ai1, ENEMY_ID);
+//    System.out.println(t);
+
+    return res;
+  }
+
+
+  public static void playOneWithParams(int ai1, int[] params, int resample) {
+//    ElapsedCpuTimer t = new ElapsedCpuTimer();
+
+    setParams(params);
+    GameTest.playOne(ai1,ENEMY_ID,true,1);
+  }
+
+
+  public static double fitness(double _var) {
+//    double sqDist = (var-target)*(var-target);
+//    return (1 - sqDist/range);
+//    double dist = Math.abs(var - target);
+//    return (1 - dist/maxDist);
+    return _var;
+  }
+
+  public static void setParams(int[] params) {
     MISSILE_MAX_SPEED = params[0];
     MISSILE_COOLDOWN = params[1];
     MISSILE_RADIUS = params[2];
@@ -183,22 +210,6 @@ public class GameDesign {
     RESOURCE_COOLDOWN = params[28];
 
     ENEMY_ID = params[29];
-
-
-    int res1 = GameTest.playOne(ai1,ENEMY_ID,true,1);
-//    double[] res = GameTest.playNAndMean(resample, ai1, ENEMY_ID);
-//    System.out.println(t);
-
-    return null;
-  }
-
-
-  public static double fitness(double _var) {
-//    double sqDist = (var-target)*(var-target);
-//    return (1 - sqDist/range);
-//    double dist = Math.abs(var - target);
-//    return (1 - dist/maxDist);
-    return _var;
   }
 
 }

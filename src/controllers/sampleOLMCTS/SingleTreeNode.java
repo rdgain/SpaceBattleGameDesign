@@ -114,9 +114,7 @@ public class SingleTreeNode
     Types.ACTIONS[] oppActions = Agent.actions[Agent.oppID];
     acts[Agent.oppID] = oppActions[new Random().nextInt(oppActions.length)];
 
-    for (int i = 0; i < Agent.MACRO_ACTIONS; i++) {
-      state.advance(acts);
-    }
+    state.advance(acts);
 
     SingleTreeNode tn = new SingleTreeNode(this,bestAction,m_rnd);
     children[bestAction] = tn;
@@ -164,9 +162,7 @@ public class SingleTreeNode
     Types.ACTIONS[] oppActions = Agent.actions[Agent.oppID];
     acts[Agent.oppID] = oppActions[new Random().nextInt(oppActions.length)];
 
-    for (int i = 0; i < Agent.MACRO_ACTIONS; i++) {
-      state.advance(acts);
-    }
+    state.advance(acts);
 
     return selected;
   }
@@ -184,7 +180,8 @@ public class SingleTreeNode
         acts[i] = Agent.actions[i][m_rnd.nextInt(Agent.NUM_ACTIONS[i])];
       }
       for (int i = 0; i < Agent.MACRO_ACTIONS; i++) {
-        state.advance(acts);
+        if (!finishRollout(state,thisDepth))
+          state.advance(acts);
       }
       thisDepth++;
     }
