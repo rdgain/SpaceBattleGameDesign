@@ -319,6 +319,8 @@ public class StateObservationMulti {
     ElapsedCpuTimer elapsedTimer = new ElapsedCpuTimer();
     elapsedTimer.setMaxTimeMillis(CompetitionParameters.ACTION_TIME);
 
+  //  System.out.println(RESOURCE_COOLDOWN +" "+ RESOURCE_TTL);
+    
       if(getGameTick()%(RESOURCE_COOLDOWN + RESOURCE_TTL)==10)
       {
           //spawn a new resource on the map

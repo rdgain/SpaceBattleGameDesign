@@ -1,6 +1,6 @@
 package test;
 
-import bandits.SearchSpace;
+import evodef.SearchSpace;
 
 import java.util.Random;
 
@@ -12,7 +12,7 @@ import java.util.Random;
  * Respect to Google Java Style Guide:
  * https://google.github.io/styleguide/javaguide.html
  */
-public class SpaceBattleGameSearchSpace implements SearchSpace {
+public class SpaceBattleGameSearchSpace implements SearchSpace{
 
   static int[][] values = {
       { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, // MISSILE_MAX_SPEED
@@ -69,6 +69,17 @@ public class SpaceBattleGameSearchSpace implements SearchSpace {
   public int getRandomValue(int idxDim) {
     int idx = new Random().nextInt(values[idxDim].length);
     return values[idxDim][idx];
+  }
+  
+  public int indexOf(int idxDim, int value)
+  {
+	  int[] a = values[idxDim];
+	  
+	  for(int i=0;i<a.length;i++)
+		  if(a[i]==value)
+			  return i;
+	  
+	  return -1;
   }
 
 

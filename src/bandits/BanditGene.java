@@ -1,6 +1,6 @@
 package bandits;
 
-import tools.StatSummary;
+import utilities.StatSummary;
 
 import java.util.Random;
 
@@ -25,7 +25,7 @@ public class BanditGene {
 
     // start all at one to avoid div zero
     int nMutations = 1;
-    static public double k = 1;
+    static double k = 10000;
 
     Integer xPrevious;
 
@@ -35,7 +35,8 @@ public class BanditGene {
     }
 
     public void randomize() {
-        x = random.nextInt(nArms);
+        x = 0 ; // random.nextInt(nArms);
+        // x = random.nextInt(nArms);
     }
 
     public void mutate() {
@@ -67,7 +68,6 @@ public class BanditGene {
     // standard UCB Explore term
     // consider modifying a value that's not been changed much yet
     public double explore(int nEvals) {
-        //System.out.println(k * Math.sqrt(Math.log(nEvals + 1) / (nMutations)));
         return k * Math.sqrt(Math.log(nEvals + 1) / (nMutations));
     }
 
@@ -75,38 +75,16 @@ public class BanditGene {
     public void applyReward(double delta) {
         deltaRewards[x] += delta;
         deltaRewards[xPrevious] -= delta;
-        replaceWithNewGene(delta);
     }
 
-    public boolean replaceWithNewGene(double delta) {
+    public void revertOrKeep(double delta) {
         if (delta < 0) {
             x = xPrevious;
-            return false;
         }
-        return true;
     }
 
-//    public String statusString(int nEvals) {
-////        return String.format("%d\t rescue: %.2f\t explore: %.2f\t urgency: %.2f",
-////        x, rescue(), explore(nEvals), urgency(nEvals));
-//    }
-
-    public int getX() {
-        return x;
-    }
-
-    public BanditGene copy() {
-        BanditGene geneCopy = new BanditGene();
-        geneCopy.x = x;
-        geneCopy.xPrevious = xPrevious;
-        geneCopy.deltaRewards = new double[deltaRewards.length];
-        for(int i=0; i<deltaRewards.length;i++) {
-            geneCopy.deltaRewards[i] = deltaRewards[i];
-        }
-        return geneCopy;
-    }
-
-    public static double getExplorationFactor() {
-        return k;
+    public String statusString(int nEvals) {
+        return String.format("%d\t rescue: %.2f\t explore: %.2f\t urgency: %.2f",
+                x, rescue(), explore(nEvals), urgency(nEvals));
     }
 }

@@ -104,7 +104,7 @@ public class GameTest {
     Constants.SHIP_RADIUS = params[5];
 
 
-    int[] ar = new int[]{6, 8, 8, 40, 2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 25, 2, 8, 20, 40, 0, 500, 200, 2};
+    int[] ar = new int[]{6, 7, 6, 80, 2, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 25, 2, 6, 20, 40, 1, 600, 300, 0};
     GameDesign.playOneWithParams(8, ar, 1);
 
 //    playOne(5, 0, true, 0);
