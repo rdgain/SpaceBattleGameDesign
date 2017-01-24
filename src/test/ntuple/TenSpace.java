@@ -42,6 +42,11 @@ public class TenSpace implements SearchSpace {
     }
 
     @Override
+    public int getDifferentRandomValue(int idxDim, int oldVal) {
+        return 0;
+    }
+
+    @Override
     public int indexOf(int idxDim, int value) {
         return 0;
     }

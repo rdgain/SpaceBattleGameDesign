@@ -23,8 +23,13 @@ public class EvoNTupleTest {
 
         // the number of bandits is equal to the size of the array
         int nDims = 5;
-        int nTrials = 2;
-        int nFitnessEvals = 10;
+        int nTrials = 10;
+        int nFitnessEvals = 100;
+
+        if (args != null && args.length > 1) {
+            nFitnessEvals = Integer.parseInt(args[0]);
+            if (args.length > 2) nTrials = Integer.parseInt(args[1]);
+        }
 
 //        double kExplore = 1;
 //        int nNeighbours = 10;

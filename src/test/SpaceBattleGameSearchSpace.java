@@ -66,6 +66,15 @@ public class SpaceBattleGameSearchSpace implements SearchSpace{
 //    return GameDesign.bounds[idxDim][0] + idx * GameDesign.bounds[idxDim][2];
   }
 
+  public int getDifferentRandomValue(int idxDim, int oldVal) {
+    int idx;
+    do {
+      idx = new Random().nextInt(values[idxDim].length);
+    } while (values[idxDim][idx] == oldVal);
+    return values[idxDim][idx];
+  }
+
+
   public int getRandomValue(int idxDim) {
     int idx = new Random().nextInt(values[idxDim].length);
     return values[idxDim][idx];

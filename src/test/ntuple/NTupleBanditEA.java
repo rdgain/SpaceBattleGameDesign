@@ -67,15 +67,16 @@ public class NTupleBanditEA  implements EvoAlg {
 
         // nTupleSystem.printDetailedReport();
 
+        int ai1 = 0; //OneStep
+        int ai2 = 3; //RAS
+        int ai3 = 5; //MCTS
+
         while (evaluator.nEvals() < nEvals) {
 
         	System.out.println("evaluation "+evaluator.nEvals());
             // each time around the loop we make one fitness evaluation of p
             // and add this NEW information to the memory
-        	
-        	int ai1 = 0; //OneStep
-            int ai2 = 3; //RAS
-            int ai3 = 5; //MCTS
+
 
             double fitness = evaluator.getFitness(ai1, ai2, ai3, p, 1);
             nTupleSystem.addPoint(p, fitness);
@@ -103,7 +104,7 @@ public class NTupleBanditEA  implements EvoAlg {
         // int[] solution = nTupleSystem.getBestSolution();
         // int[] solution = nTupleSystem.getBestOfSampled();
         int[] solution = nTupleSystem.getBestOfSampledPlusNeighbours(neighboursWhenFindingBest);
-        logger.keepBest(solution, evaluator.evaluate(solution));
+        logger.keepBest(solution, evaluator.getFitness(ai1, ai2, ai3, solution, 1));
         return solution;
     }
 

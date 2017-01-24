@@ -14,5 +14,6 @@ public interface SearchSpace {
     int nValues(int i);
     public int getValue(int idxDim, int idx) ;
     public int getRandomValue(int idxDim);
+    public int getDifferentRandomValue(int idxDim, int oldVal);
     public int indexOf(int idxDim, int value);
 }
