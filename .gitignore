@@ -46,3 +46,12 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.class
+
+.classpath
+
+.project
+
+*.class
+
+out/production/untitled/bandits/BanditEA.class
+/bin/

@@ -34,6 +34,7 @@ public class Ship extends GameObject {
   private boolean thrusting;
   private int healthPoints;
   private int nbKills;
+  public int collected;
   private int inBlackHoles;
   private double cost;
   private Types.WINNER winState;
@@ -77,6 +78,7 @@ public class Ship extends GameObject {
     this.cost = 0.0;
     this.nbKills = 0;
     this.inBlackHoles = 0;
+    this.collected = 0;
     this.destructivePower = Constants.MISSILE_DESTRUCTIVE_POWER;
     this.resources = new TreeMap<>();
 //    this.resources.put(Constants.WEAPON_ID_MISSILE,Constants.MISSILE_MAX_RESOURCE);
@@ -279,7 +281,8 @@ public class Ship extends GameObject {
   }
 
   public double getPoints() {
-    return this.nbKills * Constants.KILL_AWARD + this.cost - this.inBlackHoles * Constants.BLACKHOLE_PENALTY;
+    return this.nbKills * Constants.KILL_AWARD + this.cost + collected*Constants.RESOURCE_BONUS
+            - this.inBlackHoles * (Constants.BLACKHOLE_PENALTY / 10.0);
   }
 
   public double getCost() {

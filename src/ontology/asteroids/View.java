@@ -10,6 +10,7 @@ import java.awt.Graphics2D;
 import java.awt.Font;
 import java.awt.Dimension;
 import java.awt.geom.AffineTransform;
+import java.text.DecimalFormat;
 
 
 /**
@@ -72,19 +73,21 @@ public class View extends JComponent {
     g.setFont(FONT);
 //    System.out.println("View : paintState finished !");
 
-    double sc0 = ((int)(game.getGameScore(0) * 1000) * 0.001);
-    double sc1 = ((int)(game.getGameScore(1) * 1000) * 0.001);
-    String strScores    = "Score:    " + sc0 + " | " + sc1;
+    DecimalFormat formatter = new DecimalFormat("##.##");
+//    double sc0 = ((int)(game.getGameScore(0) * 1000) * 0.001);
+//    double sc1 = ((int)(game.getGameScore(1) * 1000) * 0.001);
+//    String strScores    = "Score:    " + formatter.format(sc0) + " | " + formatter.format(sc1);
 
 
-    String strPoints = "Points:    " + game.getPlayerPoints(0) + " | " + game.getPlayerPoints(1);
+
+    String strPoints = "Points:    " + formatter.format(game.getPlayerPoints(0)) + " | " + formatter.format(game.getPlayerPoints(1));
     String strTicks = "Ticks:    " + game.getGameTick();
     String strLives = "Life: " + game.getAvatarLives(0) +  " | " + game.getAvatarLives(1);
     String strMissiles = "Missiles: " + game.getAvatars()[0].weaponSystems.get(0).getResource() +  " | " + game.getAvatars()[1].weaponSystems.get(0).getResource();
     String p1 = "P1 BLUE";
     String p2 = "P2 GREEN";
     g.drawString(strPoints, 10, 20);
-    g.drawString(strScores, 10, 40);
+//    g.drawString(strScores, 10, 40);
     g.drawString(strLives, 10, 80);
     g.drawString(strMissiles, 10, 100);
     g.drawString(strTicks, 10, 140);

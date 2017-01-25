@@ -117,7 +117,7 @@ public class ValidParams {
   public static void main(String[] args) {
     System.out.println("r5");
     for (int n=22; n<44; n++) {
-      double[] res = GameDesign.playNWithParams(7, 2, optimalParams[n], 100);
+      double[] res = GameDesign.playNWithParams(7, optimalParams[n], 100);
       //System.out.println(res[0] + " " + res[1] + " " + res[2] + " " + res[3]);
     }
   }

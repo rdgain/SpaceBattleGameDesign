@@ -179,7 +179,10 @@ public class SingleTreeNode
       for (int i = 0; i < Agent.no_players; i++) {
         acts[i] = Agent.actions[i][m_rnd.nextInt(Agent.NUM_ACTIONS[i])];
       }
-      state.advance(acts);
+      for (int i = 0; i < Agent.MACRO_ACTIONS; i++) {
+        if (!finishRollout(state,thisDepth))
+          state.advance(acts);
+      }
       thisDepth++;
     }
 
