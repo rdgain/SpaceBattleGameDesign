@@ -7,18 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e7eaa5a-9dad-47d0-be46-914f3c96e157" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/untitled/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jshapes.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jshapes.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpaceBattleGameDesign.iml" afterPath="$PROJECT_DIR$/SpaceBattleGameDesign.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceBattleGameDesign/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/SpaceBattleGameDesign/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/evodef/SearchSpace.java" afterPath="$PROJECT_DIR$/src/evodef/SearchSpace.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/RMHCTest.java" afterPath="$PROJECT_DIR$/src/test/RMHCTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/SpaceBattleGameSearchSpace.java" afterPath="$PROJECT_DIR$/src/test/SpaceBattleGameSearchSpace.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/ntuple/EvoNTupleTest.java" afterPath="$PROJECT_DIR$/src/test/ntuple/EvoNTupleTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/ntuple/NTupleBanditEA.java" afterPath="$PROJECT_DIR$/src/test/ntuple/NTupleBanditEA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/ntuple/TenSpace.java" afterPath="$PROJECT_DIR$/src/test/ntuple/TenSpace.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file.txt" afterPath="$PROJECT_DIR$/file.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results/results-Ntuple-3.txt" afterPath="$PROJECT_DIR$/results/results-Ntuple-3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/GameTest.java" afterPath="$PROJECT_DIR$/src/test/GameTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/StatProcess.java" afterPath="$PROJECT_DIR$/src/test/StatProcess.java" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,20 +36,17 @@
       <file leaf-file-name="NTuple.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/ntuple/NTuple.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1088">
+            <state relative-caret-position="646">
               <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-              <folding>
-                <element signature="e#3953#3954#0" expanded="false" />
-                <element signature="e#3984#3985#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EvoNTupleTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EvoNTupleTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/ntuple/EvoNTupleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="654">
+            <state relative-caret-position="782">
               <caret line="46" column="21" lean-forward="false" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -65,11 +55,41 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="GameTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/GameTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="106" column="123" lean-forward="true" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="123" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="file.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/file.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="21153" column="0" lean-forward="false" selection-start-line="21153" selection-start-column="0" selection-end-line="21153" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatProcess.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/StatProcess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="428">
+              <caret line="36" column="49" lean-forward="false" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="RMHCTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/RMHCTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+              <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -88,7 +108,7 @@
       <file leaf-file-name="NTupleBanditEA.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/ntuple/NTupleBanditEA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
+            <state relative-caret-position="255">
               <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding />
             </state>
@@ -137,7 +157,6 @@
         <option value="$PROJECT_DIR$/src/controllers/sampleGA/Agent.java" />
         <option value="$PROJECT_DIR$/src/competition/CompetitionParameters.java" />
         <option value="$PROJECT_DIR$/src/test/GameDesign.java" />
-        <option value="$PROJECT_DIR$/src/test/GameTest.java" />
         <option value="$PROJECT_DIR$/src/core/game/StateObservationMulti.java" />
         <option value="$PROJECT_DIR$/src/bandits/BanditEA.java" />
         <option value="$PROJECT_DIR$/src/bandits/BanditRHMC.java" />
@@ -155,6 +174,9 @@
         <option value="$PROJECT_DIR$/src/test/ntuple/NTupleBanditEA.java" />
         <option value="$PROJECT_DIR$/src/test/ntuple/EvoNTupleTest.java" />
         <option value="$PROJECT_DIR$/src/test/RMHCTest.java" />
+        <option value="$PROJECT_DIR$/file.txt" />
+        <option value="$PROJECT_DIR$/src/test/StatProcess.java" />
+        <option value="$PROJECT_DIR$/src/test/GameTest.java" />
       </list>
     </option>
   </component>
@@ -185,7 +207,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -447,6 +468,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -474,7 +496,7 @@
       <recent name="ontology.asteroids" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EvoNTupleTest">
+  <component name="RunManager" selected="Application.GameTest">
     <configuration default="false" name="GameTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -523,6 +545,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="test.ntuple.EvoNTupleTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="SpaceBattleGameDesign" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="StatProcess" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="test.StatProcess" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -772,6 +814,7 @@
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
       <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -893,6 +936,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -908,16 +957,18 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.GameTest" />
       <item index="1" class="java.lang.String" itemvalue="Application.RMHCTest" />
       <item index="2" class="java.lang.String" itemvalue="Application.EvoNTupleTest" />
+      <item index="3" class="java.lang.String" itemvalue="Application.StatProcess" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.EvoNTupleTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.RMHCTest" />
-        <item index="2" class="java.lang.String" itemvalue="Application.GameTest" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Application.GameTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.StatProcess" />
+        <item index="2" class="java.lang.String" itemvalue="Application.EvoNTupleTest" />
+        <item index="3" class="java.lang.String" itemvalue="Application.RMHCTest" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -964,11 +1015,12 @@
       <workItem from="1483621049152" duration="12252000" />
       <workItem from="1483978477694" duration="10331000" />
       <workItem from="1485267566686" duration="10716000" />
+      <workItem from="1485685176040" duration="2266000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39768000" />
+    <option name="totallyTimeSpent" value="42034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -984,7 +1036,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20295984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22410148" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1029,21 +1081,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/GameTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ontology/asteroids/Ship.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="86" column="6" lean-forward="false" selection-start-line="86" selection-start-column="6" selection-end-line="115" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ontology/asteroids/WeaponSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1305,14 +1342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/GameTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="185" column="39" lean-forward="false" selection-start-line="185" selection-start-column="39" selection-end-line="185" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/game/StateObservationMulti.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1377,17 +1406,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/ntuple/NTuple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding>
-            <element signature="e#3953#3954#0" expanded="false" />
-            <element signature="e#3984#3985#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/ntuple/NTupleSystemTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1419,8 +1437,8 @@
         <state relative-caret-position="629">
           <caret line="45" column="8" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="17" />
           <folding>
-            <element signature="e#826#827#0" expanded="true" />
-            <element signature="e#850#851#0" expanded="true" />
+            <element signature="e#826#827#0" expanded="false" />
+            <element signature="e#850#851#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1451,6 +1469,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/RMHCTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="21153" column="0" lean-forward="false" selection-start-line="21153" selection-start-column="0" selection-end-line="21153" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/StatProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="36" column="49" lean-forward="false" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/ntuple/NTupleSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1461,27 +1503,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/ntuple/NTupleBanditEA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
+        <state relative-caret-position="255">
           <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/RMHCTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/ntuple/NTuple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        <state relative-caret-position="646">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/ntuple/EvoNTupleTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
+        <state relative-caret-position="782">
           <caret line="46" column="21" lean-forward="false" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/GameTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="106" column="123" lean-forward="true" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="123" />
+          <folding />
         </state>
       </provider>
     </entry>

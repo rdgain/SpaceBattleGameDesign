@@ -26,7 +26,7 @@ public class StatProcess {
             BufferedReader br = new BufferedReader(new FileReader("file.txt"));
             while ((line = br.readLine()) != null) {
                 if (Objects.equals(prev, "")) prev = line;
-                if (line.contains("Best fitness")) {
+                if (line.contains("Best fitness:")) {
                     double fitness = Double.parseDouble(line.split(":")[1]);
                     ss1.add(fitness);
                     if (fitness > max1) {
@@ -34,7 +34,7 @@ public class StatProcess {
                         maxs1 = prev.split(":")[1];
                     }
                 }
-                if (line.contains("Final fitness")) {
+                if (line.contains("Final fitness:")) {
                     double fitness = Double.parseDouble(line.split(":")[1]);
                     ss2.add(fitness);
                     if (fitness > max2) {
