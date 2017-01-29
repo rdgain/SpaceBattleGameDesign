@@ -23,13 +23,13 @@ public class NTupleBanditEA  implements EvoAlg {
     double kExplore = 1.0;
     // the number of neighbours to explore around the current point each time
     // they are only explored IN THE FITNESS LANDSCAPE MODEL, not by sampling the fitness function
-    int nNeighbours = 10;
+    int nNeighbours = 100;
 
     // when searching for the best solution overall, at the end of the run
     // we ask the NTupleMemory to explore a neighbourhood around each
     // of the points added during the search
     // this param controls the size of the neighbourhood
-    int neighboursWhenFindingBest = 1;
+    int neighboursWhenFindingBest = 10;
 
 
     public NTupleBanditEA(double kExplore, int nNeighbours) {

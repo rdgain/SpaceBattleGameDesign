@@ -102,9 +102,9 @@ public class GameTest {
     Constants.MISSILE_MAX_SPEED = params[3];
     Constants.MISSILE_COOLDOWN = params[4];
     Constants.SHIP_RADIUS = params[5];
+ //
 
-
-    int[] ar = new int[]{9, 3, 8, 100, 2, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 75, 0, 7, 0, 40, 2, 400, 250, 4};
+    int[] ar = new int[]{10, 8, 6, 60, 2, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 75, 0, 6, 10, 20, 0, 500, 200, 2};
     GameDesign.playOneWithParams(8, ar, 1);
 
 //    playOne(5, 0, true, 0);
